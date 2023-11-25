@@ -12,14 +12,14 @@
   <style>
 
   </style>
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F93S0SK2GL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
+
     gtag('config', 'G-F93S0SK2GL');
   </script>
 </head>
@@ -91,16 +91,32 @@
     let memory = 0;
     let result = '';
 
+    function isOperator(character) {
+      const operators = ['+', '-', '*', '/'];
+      return operators.includes(character);
+    }
+
     function appendCharacter(character) {
       const inputField = document.getElementById('result');
       const decimalButton = document.getElementById('decimalButton');
+
+      var isLastCharOperator = false;
+      if (result.length > 0){
+        isLastCharOperator = isOperator(result.slice(-1));
+      }
 
       // Check if the last input is a decimal point
       if (character !== '.' && result.endsWith('.')) {
         // Append the character after the decimal point
         result += '' + character;
         decimalButton.disabled = true;
-      } else {
+      }else if (isOperator(character) && isLastCharOperator){
+        //replace the last operator with the new operator
+        result = result.slice(0, -1) + character;
+      }else if ((character==="/" || character==="*") && (result.length === 0)){
+        // prevent the user from starting with a division or multiplication
+        result=""
+      }else {
         // Append the character to the result
         result += character;
         decimalButton.disabled = character === '.';
@@ -116,7 +132,7 @@
 
     function calculateResult() {
       try {
-        result = eval(result);
+        result = eval(result).toString();
         updateDisplay();
       } catch (error) {
         result = 'Error';
@@ -193,7 +209,7 @@
       const styleLink = document.getElementById('styleLink');
       const currentStyle = styleLink.href;
       const style1 = 'style1.css'; // BW Theme ETS
-      const style2 = 'style2.css'; // Colorful Theme Manhattan 
+      const style2 = 'style2.css'; // Colorful Theme Manhattan
 
       if (currentStyle.includes(style1)) {
         styleLink.href = style2;
