@@ -9,8 +9,10 @@ prepare for the GRE (Graduate Record Examination) test. It provides basic
 arithmetic operations and additional features tailored to the needs of GRE test takers.
 
 ## Demo
-<img src="assets/img/ets_theme.png" height="300">
-<img src="assets/img/manhattan_theme.png" height="300">
+<div style="display: flex;">
+    <img src="assets/img/ets_theme.png" height="300">
+    <img src="assets/img/manhattan_theme.png" height="300">
+</div>
 
 ## Features
 
