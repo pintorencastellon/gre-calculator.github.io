@@ -1,7 +1,7 @@
 body {
-  font-family: Arial, sans-serif; 
-    text-align: center;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
 
   /* Reset default styles */
 body, nav, ul, li {
@@ -36,7 +36,7 @@ nav ul li a:hover {
   color: #fff;
 }
 
-  
+
   .calculator {
     width: 300px;
     margin: 0 auto;
@@ -45,7 +45,7 @@ nav ul li a:hover {
     border-radius: 5px;
     background-color: #f7f7f7;
   }
-  
+
   .calculator input {
     width: 100%;
     margin-bottom: 10px;
@@ -55,7 +55,7 @@ nav ul li a:hover {
     border-radius: 3px;
     box-sizing: border-box;
   }
-  
+
   .calculator button {
     width: 32%;
     padding: 10px;
@@ -68,18 +68,18 @@ nav ul li a:hover {
     margin-right: 5px;
     font-family: 'Press Start 2P', cursive !important;
   }
-  
+
   .calculator button:active {
     background-color: #aaa;
   }
-  
+
   .row1 {
     display: flex;
     justify-content: space-evenly;
   }
 
   #display-button{
-      background-color: white;  
+      background-color: white;
       color: #000;
       border: 2px solid black;
     font-family: 'Press Start 2P', cursive !important;
